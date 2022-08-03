@@ -44,10 +44,8 @@ CppMountItem CppMountItem::UpdatePropsMountItem(
 CppMountItem CppMountItem::UpdateStateMountItem(ShadowView const &shadowView) {
   return {CppMountItem::Type::UpdateState, {}, {}, shadowView, -1};
 }
-CppMountItem CppMountItem::UpdateLayoutMountItem(
-    ShadowView const &shadowView,
-    ShadowView const &parentView) {
-  return {CppMountItem::Type::UpdateLayout, parentView, {}, shadowView, -1};
+CppMountItem CppMountItem::UpdateLayoutMountItem(ShadowView const &shadowView) {
+  return {CppMountItem::Type::UpdateLayout, {}, {}, shadowView, -1};
 }
 CppMountItem CppMountItem::UpdateEventEmitterMountItem(
     ShadowView const &shadowView) {

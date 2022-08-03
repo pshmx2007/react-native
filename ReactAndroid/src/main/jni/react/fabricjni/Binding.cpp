@@ -434,10 +434,6 @@ void Binding::installFabricUIManager(
       "MapBufferSerializationEnabled",
       getFeatureFlagValue("mapBufferSerializationEnabled"));
 
-  contextContainer->insert(
-      "CalculateTransformedFramesEnabled",
-      getFeatureFlagValue("calculateTransformedFramesEnabled"));
-
   disablePreallocateViews_ = reactNativeConfig_->getBool(
       "react_fabric:disabled_view_preallocation_android");
 
