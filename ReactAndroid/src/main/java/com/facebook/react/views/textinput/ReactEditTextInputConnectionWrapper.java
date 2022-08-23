@@ -14,6 +14,7 @@ import android.view.inputmethod.InputConnectionWrapper;
 import androidx.annotation.Nullable;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.uimanager.events.EventDispatcher;
+import android.util.Log;
 
 /**
  * A class to implement the TextInput 'onKeyPress' API on android for soft keyboards. It is
@@ -130,6 +131,7 @@ class ReactEditTextInputConnectionWrapper extends InputConnectionWrapper {
   // in each case, respectively.
   @Override
   public boolean sendKeyEvent(KeyEvent event) {
+    Log.i("RUBIS-DEBUG", String.valueOf(event.getKeyCode()));
     if (event.getAction() == KeyEvent.ACTION_DOWN) {
       boolean isNumberKey = event.getUnicodeChar() < 58 && event.getUnicodeChar() > 47;
       if (event.getKeyCode() == KeyEvent.KEYCODE_DEL) {
