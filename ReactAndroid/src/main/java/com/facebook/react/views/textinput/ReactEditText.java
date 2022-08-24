@@ -1148,19 +1148,19 @@ public class ReactEditText extends AppCompatEditText
      */
     @Override
     public boolean onKeyDown(View view, Editable text, int keyCode, KeyEvent event) {
-      Log.i("RUBIS-DEBUG-onKeyDown", text + " " + String.valueOf(event.getKeyCode()));
+      // Log.i("RUBIS-DEBUG-onKeyDown", text + " " + String.valueOf(event.getKeyCode()));
       return sKeyListener.onKeyDown(view, text, keyCode, event);
     }
 
     @Override
     public boolean onKeyUp(View view, Editable text, int keyCode, KeyEvent event) {
-      Log.i("RUBIS-DEBUG-onKeyUp", text + " " + String.valueOf(event.getKeyCode()));
+      // Log.i("RUBIS-DEBUG-onKeyUp", text + " " + String.valueOf(event.getKeyCode()));
       return sKeyListener.onKeyUp(view, text, keyCode, event);
     }
 
     @Override
     public boolean onKeyOther(View view, Editable text, KeyEvent event) {
-      Log.i("RUBIS-DEBUG-onKeyOther", text + " " + String.valueOf(event.getKeyCode()));
+      // Log.i("RUBIS-DEBUG-onKeyOther", text + " " + String.valueOf(event.getKeyCode()));
       return sKeyListener.onKeyOther(view, text, event);
     }
 

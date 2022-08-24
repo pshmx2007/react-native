@@ -101,6 +101,7 @@ class ReactEditTextInputConnectionWrapper extends InputConnectionWrapper {
     } else {
       key = String.valueOf(mEditText.getText().charAt(currentSelectionStart - 1));
     }
+    Log.i("RUBIS-DEBUG-setComposingText", key + " " + text.toString());
     dispatchKeyEventOrEnqueue(key);
     return consumed;
   }
@@ -131,7 +132,7 @@ class ReactEditTextInputConnectionWrapper extends InputConnectionWrapper {
   // in each case, respectively.
   @Override
   public boolean sendKeyEvent(KeyEvent event) {
-    Log.i("RUBIS-DEBUG", String.valueOf(event.getKeyCode()));
+    Log.i("RUBIS-DEBUG", String.valueOf(event.getKeyCode()) + ' ' + String.valueOf(event.getScanCode()) + ' ' + String.valueOf(event.getMetaState()));
     if (event.getAction() == KeyEvent.ACTION_DOWN) {
       boolean isNumberKey = event.getUnicodeChar() < 58 && event.getUnicodeChar() > 47;
       if (event.getKeyCode() == KeyEvent.KEYCODE_DEL) {
@@ -157,6 +158,7 @@ class ReactEditTextInputConnectionWrapper extends InputConnectionWrapper {
     if (key.equals(NEWLINE_RAW_VALUE)) {
       key = ENTER_KEY_VALUE;
     }
+    Log.i("RUBIS-DEBUG-dispatchKeyEvent", key);
     mEventDispatcher.dispatchEvent(new ReactTextInputKeyPressEvent(mEditText.getId(), key));
   }
 }
